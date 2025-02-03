@@ -76,6 +76,7 @@
 			<version>2.3.0</version>
 		</dependency>
 
+		<!-- Dependencia de segurança do spring -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -85,6 +86,19 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Frameword para utilizar @Valid -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<!-- JWT authentication, procure no google para autenticar um serviço de login -->
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+		<version>4.5.0</version>
+</dependency>
 		
 	</dependencies>
 
