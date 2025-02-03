@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.validation.Valid;
 
 import com.hugo.cardapio.food.users.AuthenticationDTO;
+import com.hugo.cardapio.food.users.LoginResponseDTO;
 import com.hugo.cardapio.food.users.RegisterDTO;
 import com.hugo.cardapio.food.users.User;
+import com.hugo.cardapio.infra.security.TokenService;
 import com.hugo.cardapio.repositories.UserRepository;
 
 @RestController
@@ -25,13 +27,17 @@ public class AuthenticationController {
     @Autowired
     private UserRepository repository;
 
+    @Autowired
+    private TokenService tokenService;
+
     //Logar o usuário
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data){
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
+        var token = tokenService.generateToken((User) auth.getPrincipal());
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
