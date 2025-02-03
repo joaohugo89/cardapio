@@ -15,7 +15,6 @@ This project is an API built using **Java, Java Spring, Flyway Migrations, Postg
 - [API Endpoints](#api-endpoints)
 - [Authentication](#authentication)
 - [Database](#database)
-- [Contributing](#contributing)
 
 ## Installation
 
