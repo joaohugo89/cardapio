@@ -1,8 +1,8 @@
 package com.hugo.cardapio.controller;
 import com.hugo.cardapio.food.Food;
-import com.hugo.cardapio.food.FoodRepository;
 import com.hugo.cardapio.food.FoodRequestDTO;
 import com.hugo.cardapio.food.FoodResponseDTO;
+import com.hugo.cardapio.repositories.FoodRepository;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
